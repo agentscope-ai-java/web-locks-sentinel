@@ -1,0 +1,50 @@
+{
+  "name": "web-locks-sentinel",
+  "version": "0.1.0",
+  "description": "Diagnostics for navigator.locks: long-held locks, lock-order inversions that predict a deadlock before it happens, and a cross-tab view of who holds and waits on what.",
+  "keywords": [
+    "web-locks",
+    "navigator.locks",
+    "deadlock",
+    "deadlock-detection",
+    "lock-order-inversion",
+    "cross-tab",
+    "multi-tab",
+    "mutex",
+    "diagnostics",
+    "browser"
+  ],
+  "license": "MIT",
+  "author": "__AUTHOR__",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__GH_OWNER__/web-locks-sentinel.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "demo": "node examples/deadlock-demo.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run test:dist",
+    "test:dist": "node --test test/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}
