@@ -15,10 +15,10 @@
     "browser"
   ],
   "license": "MIT",
-  "author": "__AUTHOR__",
+  "author": "web-locks-sentinel",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/__GH_OWNER__/web-locks-sentinel.git"
+    "url": "git+https://github.com/agentscope-ai-java/web-locks-sentinel.git"
   },
   "type": "module",
   "engines": {
